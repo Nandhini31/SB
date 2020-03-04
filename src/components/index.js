@@ -1,1 +1,2 @@
-export {Header as default} from "./Header"
+export {default as Header} from "./Header"
+export {default as AddToDo} from "./AddToDo"
