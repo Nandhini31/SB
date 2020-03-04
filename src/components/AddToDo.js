@@ -18,19 +18,19 @@ class AddToDo extends Component {
     this.setState({input: event.target.value})
   }
   handleSubmit= () => {
-    this.setState({items: [...this.state.items, this.state.input]})
+    this.setState({items: [...this.state.items, this.state.input], isInputShown: false})
   }
   render(){
-    console.log(this.state.isInputShown)
     return(
       <>
         {this.state.items.map((todoItem, index) => <li>{todoItem}</li>)}
-        <StyledButton onClick={this.handleClick}>Add a to do </StyledButton>
         {this.state.isInputShown && 
         (<div>
           <input value = {this.state.input} onChange = {this.handleChange}/>
           <button onClick={this.handleSubmit}>Add</button>
         </div>)}
+        <StyledButton onClick={this.handleClick}>Add a to do </StyledButton>
+
       </>
     )
   }
