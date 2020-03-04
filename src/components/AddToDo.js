@@ -17,7 +17,7 @@ class AddToDo extends Component {
   handleChange =(event) => {
     this.setState({input: event.target.value})
   }
-  handleSubmit= () => {
+  handleSubmit= (state) => {
     this.setState({items: [...this.state.items, this.state.input], isInputShown: false})
   }
   render(){
