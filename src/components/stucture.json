@@ -1,31 +1,40 @@
 [
   {
-    "teams to do list": {
-      createdDate: 2132111,
-      items: [
+    "name": "teams to do list",
+    "id": 0,
+    "createdDate": 1232111,
+      "todos": [
         {
-          task: "complete prototype",
-          complete: false
+          "task": "complete prototype",
+          "complete": false,
+          "id": 0
         },{
-          task: "blah",
-          complete: true
+          "task": "blah",
+          "complete": true,
+          "id": 1
         }
       ]
-    }
-  },
+    },
   {
-    "my to do list": {
-      createdDate: 1232112,
-      items:[
-        {
-          task: "blah",
-          complete: true
-        },
-        {
-          task: blah1,
-          complete
-        }
-      ]
-    }
+    "title": "my to do list",
+    "createdDate": 1232112,
+    "id" : 1,
+    "todos":[
+      {
+        "task": "blah",
+        "complete": true,
+        "id": 1
+      },
+      {
+        "task": "blah1",
+        "complete": false,
+        "id": 1
+      }
+    ]
   }
 ]
+
+// state={
+//   "todosList": [],
+//   "selectedToDo": {"id": 0 }
+// }

@@ -4,7 +4,9 @@ class AddToDo extends Component {
   constructor(props){
     super(props)
     this.state={
-      items: [],
+      listOfLists: [{
+        
+      }],
       input: '',
       isInputShown: false
     }
@@ -14,12 +16,15 @@ class AddToDo extends Component {
       isInputShown: !state.isInputShown
     }))
   }
+
   handleChange =(event) => {
     this.setState({input: event.target.value})
   }
+
   handleSubmit= (state) => {
     this.setState({items: [...this.state.items, this.state.input], isInputShown: false})
   }
+
   render(){
     return(
       <>
@@ -30,7 +35,6 @@ class AddToDo extends Component {
           <button onClick={this.handleSubmit}>Add</button>
         </div>)}
         <StyledButton onClick={this.handleClick}>Add a to do </StyledButton>
-
       </>
     )
   }
