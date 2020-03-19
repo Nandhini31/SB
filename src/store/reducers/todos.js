@@ -1,13 +1,14 @@
 import {ADD_TODO} from "../constants"
 
-const todos= (state=[], action) => {
+export const todos= (state=[], action) => {
   switch(action.type) {
+    
     case ADD_TODO:
       return[
         ...state,
         {
           id: action.id,
-          text: action.text,
+          todo: action.todo,
           completed: false
         }
       ]

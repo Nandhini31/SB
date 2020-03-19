@@ -1,16 +1,14 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import moment from "moment"
 
-class Header extends Component{
+class Header extends PureComponent {
   render(){
-    const date = moment().format('dddd D MMMM')
+     const date = moment().format('dddd D MMMM')
     return(
-      <div>
-        <h1>Team To Do List</h1>
-        <h3>{date}</h3>
-      </div>
+      <div> TO DO List {date}</div>
+
     )
   }
 }
 
-export default  Header
+export default Header

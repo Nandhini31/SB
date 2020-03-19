@@ -3,8 +3,8 @@ const ADD_TODO = 'ADD_TODO'
 
 let toDoId = 0
 
-export const addToDo = text => ({
+export const addToDo = todo => ({
   type: ADD_TODO,
   id: toDoId++,
-  text
+  todo
 })
