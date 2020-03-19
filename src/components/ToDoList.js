@@ -9,7 +9,7 @@ class ToDoList extends PureComponent{
       <>
         {this.props.todos &&
          <ul>{this.props.todos.map((item) => {
-            return <Todo todo={item.todo} />
+           return <Todo todo={item.todo} completed={item.completed} onClick={() => this.props.onClick(item.id)} onDelete={() => this.props.onDelete(item.id)} />
           })}
         </ul>}
       </>
@@ -19,6 +19,8 @@ class ToDoList extends PureComponent{
 
 ToDoList.propTypes = {
   todos: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired
 }
 
 export default ToDoList

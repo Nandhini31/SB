@@ -1,12 +1,13 @@
 import React, {Component} from "react"
 import {connect} from "react-redux"
 import ToDoList from "../components/ToDoList"
+import {toggleTodo} from "../store/actions"
+import {removeTodo} from "../store/actions"
 
 class List extends Component{
   render(){
-    console.log("props in list", this.props)
     return(
-      <ToDoList todos={this.props.todos}/>
+      <ToDoList todos={this.props.todos} onClick={this.props.toggleTodo} onDelete={this.props.removeTodo}/>
     )
   }
 }
@@ -15,4 +16,9 @@ const mapStateToProps = state => ({
   todos: state
 })
 
-export default connect(mapStateToProps)(List)
+const mapDispatchToProps = dispatch => ({
+  toggleTodo: id => dispatch(toggleTodo(id)),
+  removeTodo: id => dispatch(removeTodo(id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(List)
