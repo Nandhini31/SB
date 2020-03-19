@@ -9,7 +9,8 @@ export const todos= (state=[], action) => {
         {
           id: action.id,
           todo: action.todo,
-          completed: false
+          completed: false,
+          removed: false
         }
       ]
     case TOGGLE_TODO:
@@ -17,10 +18,9 @@ export const todos= (state=[], action) => {
         todo.id === action.id ? {...todo, completed: !todo.completed} : todo
         )
     case REMOVE_TODO: 
-      return [
-        ...state,
-          state.filter(todo => todo.id === action.id)
-      ]
+      return state.map(todo =>
+        todo.id === action.id ? {...todo, removed: true} : todo
+      )
     default: 
         return state
   }

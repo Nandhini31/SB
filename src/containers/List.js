@@ -6,8 +6,10 @@ import {removeTodo} from "../store/actions"
 
 class List extends Component{
   render(){
+    const {todos} = this.props
+    const visibleTodos = todos.filter(todos => !todos.removed)
     return(
-      <ToDoList todos={this.props.todos} onClick={this.props.toggleTodo} onDelete={this.props.removeTodo}/>
+      <ToDoList todos={visibleTodos} onClick={this.props.toggleTodo} onDelete={this.props.removeTodo}/>
     )
   }
 }

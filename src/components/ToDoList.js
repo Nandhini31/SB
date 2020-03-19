@@ -9,7 +9,7 @@ class ToDoList extends PureComponent{
       <>
         {this.props.todos &&
          <ul>{this.props.todos.map((item) => {
-           return <Todo todo={item.todo} completed={item.completed} onClick={() => this.props.onClick(item.id)} onDelete={() => this.props.onDelete(item.id)} />
+           return <Todo todo={item.todo} completed={item.completed} removed={item.removed} onClick={() => this.props.onClick(item.id)} onDelete={() => this.props.onDelete(item.id)} />
           })}
         </ul>}
       </>
