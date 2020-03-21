@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import {connect} from "react-redux"
 import SelectedList from "../containers/SelectedList"
+import {LeftDiv} from "./styled"
 
 class ListOfTodoList extends Component {
 
@@ -8,7 +9,7 @@ class ListOfTodoList extends Component {
     const {listOfLists} = this.props
     return (
       <>
-        <div>{listOfLists[0].name}</div>
+        <LeftDiv>{listOfLists[0].name}</LeftDiv>
         <SelectedList selectedList={listOfLists[0]} />
       </>
     )

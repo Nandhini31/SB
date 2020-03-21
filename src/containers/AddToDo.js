@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import {connect} from "react-redux"
-// import {StyledButton} from "./styled"
+import {StyledButton} from "./styled"
 import {addToDo} from "../store/actions"
 
 class AddToDo extends Component {
@@ -31,7 +31,7 @@ class AddToDo extends Component {
         <div>
           <input value={this.state.input} onChange={this.handleChange} />
         </div>
-        <button onClick={this.handleSubmit}>Add a to do </button>
+        <StyledButton onClick={this.handleSubmit}>Add a to do </StyledButton>
       </>
     )
   }

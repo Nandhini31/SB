@@ -1,6 +1,8 @@
 import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO} from "../constants"
 import moment from "moment"
 
+let todoId = 0
+
 const initialState = {
   listOfLists: [{
     name: "Team to do list",
@@ -18,7 +20,7 @@ export const todos = (state = initialState, action) => {
         if(item.id === action.listId){
           return {
             ...item,
-            todos: [...item.todos, {todo: action.todo, todoId: action.todoId}]
+            todos: [...item.todos, {todo: action.todo, todoId: todoId++}]
           }
         }
         return item
