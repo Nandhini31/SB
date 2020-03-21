@@ -46,7 +46,7 @@ export const todos = (state = initialState, action) => {
           return {
             ...item,
             todos: item.todos.map((todo) => {
-              return todo.id === action.todoId ? {...todo, completed: true} : todo
+              return todo.id === action.todoId ? {...todo, completed: !todo.completed} : todo
             })
           }
         }
