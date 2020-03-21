@@ -4,17 +4,16 @@ import PropTypes from "prop-types"
 
 class ToDoList extends PureComponent{
   render(){
-    console.log("list props", this.props)
     return(
       <>
         {this.props.todos &&
          <ul>{this.props.todos.map((item) => {
-           return <Todo  key={item.id} 
+           return <Todo  key={item.todoId} 
             todo={item.todo} 
             completed={item.completed} 
             removed={item.removed} 
-            onClick={() => this.props.onClick(item.todoId)} 
-            onDelete={() => this.props.onDelete(item.todoId)} />
+            onClick={() => this.props.onClick(this.props.listId, item.todoId)} 
+            onDelete={() => this.props.onDelete(this.props.listId,item.todoId)} />
           })}
         </ul>}
       </>

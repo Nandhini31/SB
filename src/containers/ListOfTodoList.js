@@ -8,7 +8,7 @@ class ListOfTodoList extends Component {
     const {listOfLists} = this.props
     return (
       <>
-        {/* <div>{listOfLists[0].name}</div> */}
+        <div>{listOfLists[0].name}</div>
         <SelectedList selectedList={listOfLists[0]} />
       </>
     )

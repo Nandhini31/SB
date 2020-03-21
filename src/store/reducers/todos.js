@@ -31,13 +31,12 @@ export const todos = (state = initialState, action) => {
           return {
             ...item,
             todos: item.todos.map((todo) => {
-              return todo.id ===action.todoId ? {...todo, removed: true} : todo
+              return todo.todoId === action.todoId ? {...todo, removed: true} : todo
             })
           }
         }
         return item
       })
-      console.log("state in reducer", {...state, listOfLists: [...removeNewList]}  )
       return {...state, listOfLists: [...removeNewList]} 
     case TOGGLE_TODO:
       let toggleListCopy = [...state.listOfLists]
@@ -46,13 +45,12 @@ export const todos = (state = initialState, action) => {
           return {
             ...item,
             todos: item.todos.map((todo) => {
-              return todo.id === action.todoId ? {...todo, completed: !todo.completed} : todo
+              return todo.todoId === action.todoId ? {...todo, completed: !todo.completed} : todo
             })
           }
         }
         return item
       })
-      console.log("state in reducer", {...state, listOfLists: [...toggleNewList]})
       return {...state, listOfLists: [...toggleNewList]} 
     default:
       return state
