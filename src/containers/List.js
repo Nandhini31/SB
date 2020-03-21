@@ -6,21 +6,19 @@ import {removeTodo} from "../store/actions"
 
 class List extends Component{
   render(){
+    console.log("props in list", this.props)
     const {todos} = this.props
-    const visibleTodos = todos.filter(todos => !todos.removed)
+    const visibleTodos = todos.length >= 1 ? todos.filter(todos => !todos.removed) : []
     return(
-      <ToDoList todos={visibleTodos} onClick={this.props.toggleTodo} onDelete={this.props.removeTodo}/>
+      // <ToDoList todos={todos} onClick={this.props.toggleTodo} onDelete={this.props.removeTodo}/>
+      <ToDoList todos={visibleTodos} onClick={this.props.toggleTodo} onDelete={this.props.removeTodo} />
     )
   }
 }
-
-const mapStateToProps = state => ({
-  todos: state
-})
 
 const mapDispatchToProps = dispatch => ({
   toggleTodo: id => dispatch(toggleTodo(id)),
   removeTodo: id => dispatch(removeTodo(id))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(List)
+export default connect(null,mapDispatchToProps)(List)

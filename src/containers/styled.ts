@@ -8,8 +8,3 @@ export const StyledButton = styled.button`
   text-decoration: underline;
   cursor: pointer;
 `
-
-
-export const ToDoItem  = styled.p`
-
-`

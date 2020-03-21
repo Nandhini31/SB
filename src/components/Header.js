@@ -1,14 +1,21 @@
 import React, {PureComponent} from 'react';
-import moment from "moment"
+import PropTypes from "prop-types"
 
 class Header extends PureComponent {
   render(){
-     const date = moment().format('dddd D MMMM')
     return(
-      <div> TO DO List {date}</div>
-
+      <>
+        <div>{this.props.name}</div>
+        <div>{this.props.createdDate}</div>
+      </>
     )
   }
 }
+
+Header.propTypes = {
+  name: PropTypes.string.isRequired,
+  createdDate: PropTypes.string.isRequired
+}
+
 
 export default Header

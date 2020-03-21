@@ -1,6 +1,6 @@
 [
   {
-    "name": "teams to do list",
+    "name": "Team To-Do List",
     "id": 0,
     "createdDate": 1232111,
       "todos": [
@@ -14,27 +14,30 @@
           "id": 1
         }
       ]
-    },
-  {
-    "title": "my to do list",
-    "createdDate": 1232112,
-    "id" : 1,
-    "todos":[
-      {
-        "task": "blah",
-        "complete": true,
-        "id": 1
-      },
-      {
-        "task": "blah1",
-        "complete": false,
-        "id": 1
-      }
-    ]
-  }
+    }
 ]
 
 // state={
 //   "todosList": [],
 //   "selectedToDo": {"id": 0 }
 // }
+
+
+
+[
+  {"name": "Team to do list",
+    "id": 0,
+        "todos": [
+          {
+            "task": "complete prototype",
+            "complete": false,
+            "id": 0
+          },
+          {
+            "task": "blah",
+            "complete": true,
+            "id": 1
+          }
+        ]
+    }
+]

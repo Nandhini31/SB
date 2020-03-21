@@ -11,10 +11,19 @@ class AddToDo extends Component {
     }
   }
 
+  getIntialData = () => {
+    this.setState({input: ''})
+  }
+  
   handleChange = (event) => {
     this.setState({input: event.target.value})
   }
 
+  handleSubmit = () => {
+    if(!this.state.input) return
+    this.props.dispatch(addToDo(this.state.input, this.props.listId))
+    this.getIntialData()
+  }
 
   render() {
     console.log("props in container", this.props)
@@ -23,16 +32,11 @@ class AddToDo extends Component {
         <div>
           <input value={this.state.input} onChange={this.handleChange} />
         </div>
-        <button onClick={() => this.props.dispatch(addToDo(this.state.input))}>Add a to do </button>
+        <button onClick={this.handleSubmit}>Add a to do </button>
       </>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    todos: state
-  }
-}
 
-export default connect(mapStateToProps)(AddToDo)
+export default connect()(AddToDo)

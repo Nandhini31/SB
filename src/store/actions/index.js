@@ -4,18 +4,21 @@ const REMOVE_TODO = 'REMOVE_TODO'
 
 let toDoId = 0
 
-export const addToDo = todo => ({
+export const addToDo = (todo, listId) => ({
   type: ADD_TODO,
-  id: toDoId++,
+  listId,
+  todoId: toDoId++,
   todo
 })
 
-export const toggleTodo = id => ({
+export const toggleTodo = (listId, todoId) => ({
   type: TOGGLE_TODO,
-  id
+  listId,
+  todoId
 })
 
-export const removeTodo = id => ({
+export const removeTodo = (listId, todoId) => ({
   type: REMOVE_TODO,
-  id
+  listId,
+  todoId
 })

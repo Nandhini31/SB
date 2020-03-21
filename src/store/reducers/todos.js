@@ -1,27 +1,60 @@
-import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO} from "../constants"
+import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO} from "../constants"
+import moment from "moment"
 
-export const todos= (state=[], action) => {
-  switch(action.type) {
-    
+const initialState = {
+  listOfLists: [{
+    name: "Team to do list",
+    id: 0,
+    createdDate: moment().format('dddd D MMMM'),
+    todos: []
+  }]
+}
+
+export const todos = (state = initialState, action) => {
+  switch (action.type) {
     case ADD_TODO:
-      return[
-        ...state,
-        {
-          id: action.id,
-          todo: action.todo,
-          completed: false,
-          removed: false
+      let listCopy = [...state.listOfLists]
+      let newList=listCopy.map((item) => {
+        if(item.id === action.listId){
+          return {
+            ...item,
+            todos: [...item.todos, {todo: action.todo, todoId: action.todoId}]
+          }
         }
-      ]
+        return item
+      })
+      return {...state, listOfLists: [...newList]} 
+    case REMOVE_TODO:
+      let removeListCopy = [...state.listOfLists]
+      let removeNewList = removeListCopy.map((item) => {
+        if (item.id === action.listId) {
+          return {
+            ...item,
+            todos: item.todos.map((todo) => {
+              return todo.id ===action.todoId ? {...todo, removed: true} : todo
+            })
+          }
+        }
+        return item
+      })
+      console.log("state in reducer", {...state, listOfLists: [...removeNewList]}  )
+      return {...state, listOfLists: [...removeNewList]} 
     case TOGGLE_TODO:
-      return state.map(todo => 
-        todo.id === action.id ? {...todo, completed: !todo.completed} : todo
-        )
-    case REMOVE_TODO: 
-      return state.map(todo =>
-        todo.id === action.id ? {...todo, removed: true} : todo
-      )
-    default: 
-        return state
+      let toggleListCopy = [...state.listOfLists]
+      let toggleNewList = toggleListCopy.map((item) => {
+        if (item.id === action.listId) {
+          return {
+            ...item,
+            todos: item.todos.map((todo) => {
+              return todo.id === action.todoId ? {...todo, completed: true} : todo
+            })
+          }
+        }
+        return item
+      })
+      console.log("state in reducer", {...state, listOfLists: [...toggleNewList]})
+      return {...state, listOfLists: [...toggleNewList]} 
+    default:
+      return state
   }
 }
