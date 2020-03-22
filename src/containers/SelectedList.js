@@ -13,8 +13,8 @@ class SelectedList extends Component {
     return (
       <>
         <Header name={selectedList.name} createdDate={selectedList.createdDate}/>
-        <AddToDo todos={selectedList.todos} listId={selectedList.id}/>
         <List todos={selectedList.todos} listId={selectedList.id}/>
+        <AddToDo todos={selectedList.todos} listId={selectedList.id} />
       </>
     )
   }
