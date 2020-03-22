@@ -9,18 +9,26 @@ export const StyledButton = styled.button`
   cursor: pointer;
 `
 
+export const AppContainer = styled.div`
+
+`
+
 export const LeftDiv = styled.div`
-  border: 1px solid #f00;
-  width: 400px;
-  height: 300px; 
-  float: left;
+  border: 1px solid;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
 `
 
 export const RightDiv = styled.div`
-  border: 1px solid #f00;
-  width: 400px;
-  height: 300px; 
-  float: left;
+  border: 1px solid;
+  margin-left: 200px;
+  font-size: 28px; 
 `
 
 export const Image = styled.img`
@@ -39,6 +47,7 @@ export const Name = styled.div`
 export const ListContainer = styled.div`
   display: flex;
   padding: 20px;
+  background-color: #e6e6ff;
 `
 
 export const ListName = styled.div`

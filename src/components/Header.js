@@ -1,13 +1,14 @@
 import React, {PureComponent} from 'react';
 import PropTypes from "prop-types"
+import {HeaderContainer} from "./styled"
 
 class Header extends PureComponent {
   render(){
     return(
-      <>
-        <div>{this.props.name}</div>
+      <HeaderContainer>
+        <h2>{this.props.name}</h2>
         <div>{this.props.createdDate}</div>
-      </>
+      </HeaderContainer>
     )
   }
 }

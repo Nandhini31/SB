@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import {connect} from "react-redux"
 import SelectedList from "../containers/SelectedList"
-import {LeftDiv, Image, ProfileContainer, Name, ListContainer, ListName} from "./styled"
+import {LeftDiv, Image, ProfileContainer, Name, ListContainer, ListName, AppContainer, RightDiv} from "./styled"
 import img_avatar from "../images/img_avatar.png"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faList} from '@fortawesome/fontawesome-free-solid'
@@ -11,7 +11,7 @@ class ListOfTodoList extends Component {
   render() {
     const {listOfLists} = this.props
     return (
-      <>
+      <AppContainer>
         <LeftDiv>
           <ProfileContainer>
             <Image src={img_avatar}/>
@@ -22,8 +22,10 @@ class ListOfTodoList extends Component {
             <ListName>{listOfLists[0].name}</ListName>
           </ListContainer>
         </LeftDiv>
-        <SelectedList selectedList={listOfLists[0]} />
-      </>
+        <RightDiv>
+          <SelectedList selectedList={listOfLists[0]} />
+        </RightDiv>
+      </AppContainer>
     )
   }
 }

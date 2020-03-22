@@ -13,3 +13,9 @@ export const StyledButton = styled.button`
 export const ToDoItem  = styled.p`
 
 `
+
+export const HeaderContainer = styled.div`
+  background-color: #8533ff;
+  padding: 40px 10px 10px;
+  color: white;
+`
