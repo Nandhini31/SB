@@ -1,9 +1,9 @@
 import React, {Component} from "react"
+import PropTypes from "prop-types"
 
 import Header from "../components/Header"
 import AddToDo from "../containers/AddToDo"
 import List from "../containers/List"
-import PropTypes from "prop-types"
 import {RightDiv} from "./styled"
 
 class SelectedList extends Component {

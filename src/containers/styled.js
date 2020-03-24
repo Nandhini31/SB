@@ -10,7 +10,6 @@ export const StyledButton = styled.button`
 `
 
 export const AppContainer = styled.div`
-
 `
 
 export const LeftDiv = styled.div`

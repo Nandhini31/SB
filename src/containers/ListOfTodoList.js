@@ -1,10 +1,11 @@
 import React, {Component} from "react"
 import {connect} from "react-redux"
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faList} from '@fortawesome/fontawesome-free-solid'
+
 import SelectedList from "../containers/SelectedList"
 import {LeftDiv, Image, ProfileContainer, Name, ListContainer, ListName, AppContainer, RightDiv} from "./styled"
 import img_avatar from "../images/img_avatar.png"
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faList} from '@fortawesome/fontawesome-free-solid'
 
 class ListOfTodoList extends Component {
 
