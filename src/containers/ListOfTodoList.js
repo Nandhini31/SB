@@ -15,11 +15,11 @@ class ListOfTodoList extends Component {
       <AppContainer>
         <LeftDiv>
           <ProfileContainer>
-            <Image src={img_avatar}/>
+            <Image src={img_avatar} />
             <Name>Nandhini Narasimhan</Name>
           </ProfileContainer>
           <ListContainer>
-            <FontAwesomeIcon icon={faList} color="#b3b3cc"/>
+            <FontAwesomeIcon icon={faList} color="#b3b3cc" />
             <ListName>{listOfLists[0].name}</ListName>
           </ListContainer>
         </LeftDiv>

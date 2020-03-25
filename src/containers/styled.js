@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+
 export const StyledButton = styled.button`
    background: none!important;
   border: none;
@@ -10,12 +11,13 @@ export const StyledButton = styled.button`
 `
 
 export const AppContainer = styled.div`
+
 `
 
 export const LeftDiv = styled.div`
-  border: 1px solid;
+  box-shadow: 2px 0 #DCDCDC;
   height: 100%;
-  width: 200px;
+  width: 300px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -25,8 +27,8 @@ export const LeftDiv = styled.div`
 `
 
 export const RightDiv = styled.div`
-  border: 1px solid;
-  margin-left: 200px;
+  box-shadow: 2px 0 #DCDCDC;
+  margin-left: 305px;
   font-size: 28px; 
 `
 
@@ -51,4 +53,7 @@ export const ListContainer = styled.div`
 
 export const ListName = styled.div`
   padding-left: 10px;
+`
+
+export const AddToDoContainer = styled.div`
 `
